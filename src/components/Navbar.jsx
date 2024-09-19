@@ -1,6 +1,8 @@
 import Logo from "../assets/logo.png";
 import { MdMenu } from "react-icons/md";
 import { FaRegUser } from "react-icons/fa";
+import { motion } from "framer-motion";
+import { UpdateFollower } from "react-mouse-follower";
 
 const NavbarMenu = [
   {
@@ -33,7 +35,12 @@ const NavbarMenu = [
 const Navbar = () => {
   return (
     <div className="text-white py-8">
-      <div className="container flex justify-between items-center">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 0.5 }}
+        className="container flex justify-between items-center"
+      >
         {/* logo section */}
         <div>
           <img src={Logo} alt="" className="max-w-[100px] invert" />
@@ -43,12 +50,22 @@ const Navbar = () => {
           <ul className="flex items-center gap-4 relative z-40">
             {NavbarMenu.map((item) => (
               <li key={item}>
-                <a
-                  href={item.link}
-                  className="inline-block text-base font-semibold py-2 px-3 uppercase"
+                <UpdateFollower
+                  mouseOptions={{
+                    backgroundColor: "white",
+                    zIndex: 10,
+                    followSpeed: 1.5,
+                    scale: 1.5,
+                    mixBlendMode: "difference",
+                  }}
                 >
-                  {item.title}
-                </a>
+                  <a
+                    href={item.link}
+                    className="inline-block text-base font-semibold py-2 px-3 uppercase"
+                  >
+                    {item.title}
+                  </a>
+                </UpdateFollower>
               </li>
             ))}
             <button className="text-xl ps-14">
@@ -60,7 +77,7 @@ const Navbar = () => {
         <div className="md:hidden">
           <MdMenu className="text-4xl" />
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };
