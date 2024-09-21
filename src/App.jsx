@@ -2,6 +2,9 @@ import React from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import { UpdateFollower } from "react-mouse-follower";
+import Products from "./components/Products/Products";
+import Banner from "./components/Banner/Banner";
+import BannerText from "./components/Banner/BannerText";
 
 const App = () => {
   return (
@@ -14,6 +17,9 @@ const App = () => {
         }}
       >
         <Hero />
+        <Products />
+        <Banner />
+        <BannerText />
       </UpdateFollower>
 
       <Navbar />
