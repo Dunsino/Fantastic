@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React from "react";
 import Blog1 from "../../assets/Blogs/1.jpg";
 import Blog2 from "../../assets/Blogs/2.jpg";
@@ -44,6 +45,7 @@ const Blogs = () => {
         {/* card section */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {BlogData.map((item) => (
+            // eslint-disable-next-line react/jsx-key
             <UpdateFollower
               mouseOptions={{
                 backgroundColor: "black",

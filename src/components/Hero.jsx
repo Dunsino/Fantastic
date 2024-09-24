@@ -251,7 +251,7 @@ const Hero = () => {
           </AnimatePresence>
 
           {/* Whatsapp icon */}
-          <div className="text-3xl text-white fixed bottom-10 hover:rotate-[360deg] duration-500 z-[99999] mix-blend-difference ">
+          <div className="text-3xl text-white fixed bottom-10 hover:rotate-[360deg] duration-500 z-[9999] mix-blend-difference">
             <a href="#">
               <FaWhatsapp />
             </a>
